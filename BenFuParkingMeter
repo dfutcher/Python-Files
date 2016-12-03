@@ -6,35 +6,38 @@ time.sleep(1)
 print("You have to enter 5 pounds to get a ticket")
 time.sleep(1)
 
-TotalCashEntered = int(input("Please enter 5 pounds for a ticket"))
+TotalCashEntered = 0 #sets initial value of variable
 
-if TotalCashEntered == 5:
-    time.sleep(1)
-    print("You have entered 5 pounds, thank you. Here's your ticket")
-    time.sleep(1)
-    print("Printing ticket")
-    time.sleep(1)
-    print("********************************************")
-    print("============================================")
-    print(" Car Parking Ticket ")
-    print(" Parking Space: R14")
-    print("============================================")
-    print("********************************************")
-elif TotalCashEntered > 5:
-    time.sleep(1)
-    print("You have entered ",TotalCashEntered," pounds, here's your ticket and ", (TotalCashEntered -5)," pounds change will be given")
-    time.sleep(1)
-    print("Printing ticket")
-    time.sleep(1)
-    print("********************************************")
-    print("============================================")
-    print(" Car Parking Ticket ")
-    print(" Parking Space: R14")
-    print("============================================")
-    print("********************************************")
+
 while TotalCashEntered < 5:
-    time.sleep(1)
-    MoreCash = (5 - TotalCashEntered)
-    print ("You have just enterd ", (TotalCashEntered)," pounds, you still need to enter ", (MoreCash)," more pounds for a ticket")
-    MoreCashEntered = int(input("Please enter more money")) #note this doesn't contain any other variables
-    TotalCashEntered = (TotalCashEntered + MoreCashEntered)
+
+    coins = int(input("Please enter money now: "))
+    TotalCashEntered = (TotalCashEntered + coins)
+
+    if TotalCashEntered < 5:
+        MoreCash = (5 - TotalCashEntered)
+        print ("You have just entered ",TotalCashEntered," pounds, please enter ",MoreCash," more pounds for a ticket")
+         
+
+    elif TotalCashEntered == 5:
+        time.sleep(1)
+        print("You have entered 5 pounds, thank you. Here's your ticket")
+        time.sleep(1)
+        print("Printing ticket")
+
+    elif TotalCashEntered > 5:
+        time.sleep(1)
+        print("You have entered ",TotalCashEntered," pounds, here's your ticket and ", (TotalCashEntered -5)," pounds change will be given")
+        time.sleep(1)
+        
+
+
+time.sleep(1)
+print("********************************************")
+print("============================================")
+print(" Car Parking Ticket ")
+print(" Parking Space: R14")
+print("============================================")
+print("********************************************")
+
+time.sleep(1)
