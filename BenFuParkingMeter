@@ -35,5 +35,6 @@ elif TotalCashEntered > 5:
 while TotalCashEntered < 5:
     time.sleep(1)
     MoreCash = (5 - TotalCashEntered)
-    MoreCashEntered = int(input("You have just enterd ", (TotalCashEntered)," pounds, please enter ", (MoreCash)," more pounds for a ticket"))
+    print ("You have just enterd ", (TotalCashEntered)," pounds, you still need to enter ", (MoreCash)," more pounds for a ticket")
+    MoreCashEntered = int(input("Please enter more money")) #note this doesn't contain any other variables
     TotalCashEntered = (TotalCashEntered + MoreCashEntered)
